@@ -1,0 +1,58 @@
+C#
+
+
+Linq--
+var emp = from emp in lstemp where emp.Basic > 11000 && emp.Basic > 12000  select emp;
+var emps = lstEmp.Where(x => x.Basic > 10000).Select(s=> new {s.Name, s.Basic, place = "jabalpur"});
+
+var joinData = from emp in lstEmp
+               join dept in lstDept
+               on emp.DeptNo equals dept.DeptNo
+               select new { dept.DeptName, emp.Name };
+
+var emps = lstEmp.Join(
+    lstDept,
+    emp => emp.DeptNo,
+    dept => dept.DeptNo,
+    (emp, dept) => new
+    {
+        dept.DeptName,
+        emp.EmpName,
+        emp.Salary
+    }).ToList();
+
+async code
+-------------------
+1.Delegates
+o.BeginInvoke(null,null);
+static void Main()
+    {
+        Console.WriteLine("Before");
+
+        Func<string, string> o = Display;
+
+        o.BeginInvoke("aaa", delegate (IAsyncResult ar)
+        {
+            Console.WriteLine("callback func called");
+            string retval = o.EndInvoke(ar);
+            Console.WriteLine("retval = " + retval);
+        }, null);
+
+        Console.WriteLine("After");
+        Console.ReadLine();
+    }
+
+    static string Display(string s)
+    {
+        System.Threading.Thread.Sleep(5000); // Simulate time-consuming task
+        Console.WriteLine("Display " + s);
+        return s.ToUpper();
+    }
+
+    static void CallBackFunc(IAsyncResult ar)
+    {
+        // Not used in this example
+    }
+-----------------------
+2.System.Threading
+3.System.Threading.Task
