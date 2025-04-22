@@ -20,9 +20,15 @@ var emps = lstEmp.Join(
         emp.EmpName,
         emp.Salary
     }).ToList();
+-------------------------------------------------------------------------------------------------------------------------------------------------
 
 async code
 -------------------
+1.Delegates
+2.System.Threading
+3.System.Threading.Task
+------------------
+
 1.Delegates
 o.BeginInvoke(null,null);
 static void Main()
@@ -54,5 +60,20 @@ static void Main()
         // Not used in this example
     }
 -----------------------
+
 2.System.Threading
-3.System.Threading.Task
+Thread t1 = new Thread(new ThreadStart(Func1));
+Thread t2 = new Thread(Func2);
+
+what are the 3 methods to perform synchronization thread in .net
+1.Lock
+2.enter exits monitor class
+3.Interloked
+
+----------------------
+3.System.Threading.Tasks
+its thread from thread pool
+
+-------------------------------------------------------------------
+char[] chars = s.ToCharArray();
+string reversed = new string(chars);
