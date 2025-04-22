@@ -30,6 +30,12 @@ async code
 ------------------
 
 1.Delegates
+a.Normal delegate
+    public delegate int Operation(int a, int b);
+    Func<int, int,int> op
+    Func<int, int, int> add = (a, b) => a + b;
+
+b.async delegate
 o.BeginInvoke(null,null);
 static void Main()
     {
