@@ -86,3 +86,4 @@ its thread from thread pool
 -------------------------------------------------------------------
 char[] chars = s.ToCharArray();
 string reversed = new string(chars);
+Console.WriteLine(chars.GetType());
