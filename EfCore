@@ -10,9 +10,33 @@ update-database
 add-migration decimal
 Remove-Migration
 get-migration
+drop-database
 
 Rollback to old migration
 update-database AddBookToDb
+
+Data Annotation :-
+[Table("tb_geners")]
+[Column("Name")]
+[Key]
+[Required]
+
+Relation in efcore
+1.one to one - onDelete: ReferentialAction.Cascade); (if book deleted then bookdetails also be deleted)
+2.one to many - 1 publisher have many book. but 1 book has only one publisher
+3.many to many - 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
