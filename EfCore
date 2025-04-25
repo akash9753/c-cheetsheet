@@ -1,1 +1,21 @@
+DbContext - for interacting with database, all the logic that is needed for entitiy framwork core like access a database, retrive, update 
+            delete create table, all this logic provide by DbContext class
+
+DbSet - classes we want in our application and create it in the database
+
+in class BookID or Id or [Key]
+
+Command :-
+update-database
+add-migration decimal
+Remove-Migration
+get-migration
+
+Rollback to old migration
+update-database AddBookToDb
+
+
+
+
+
 
