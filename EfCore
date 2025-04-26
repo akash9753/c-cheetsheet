@@ -24,7 +24,7 @@ Data Annotation :-
 Relation in efcore
 1.one to one - onDelete: ReferentialAction.Cascade); (if book deleted then bookdetails also be deleted)
 2.one to many - 1 publisher have many book. but 1 book has only one publisher
-3.many to many - 
+3.many to many - Book and Authors
 
 
 
