@@ -1,1 +1,91 @@
+Types of Azure devops
+1. Cloud - Azure Devops Services
+2. On-premises -  Azure Devop Server
+
+Azure Devops - Users
+1. microsoft Accont
+2. Azure Active Directory
+
+create organization
+add projects
+
+Add users
+
+Epic
+
+task
+
+
+CI/CD
+Master or Main -> Staging -> Production
+
+
+Service - 
+1. Blob Storage
+2. Azure Function - piece of code deploy
+3. Logic Apps - autometic workflow
+4. Azure cache for redis
+
+Azure Storage 
+1. Blob storage - access tier HOT and COLD
+2. File Storage
+3. Table Storage
+4. Queue Storage - large number of messages, commonly used in microservices architecture 
+
+
+BLOB Storage - Blob Container - Blob
+Access Level
+1.Private
+2.Blob
+3.Container
+
+
+Azure Function :-
+1. Function as a Service
+2. Azure Function = Code + Events
+3. Supports different programming language
+
+Triggers or events
+1. Timer
+2. Message
+3. Http Request
+
+Benefits of Azure Functions :-
+
+Azure functions are easier to write and deploy.
+Lightweight and serverless.
+Azure functions are fast to execute.
+Azure functions are compute-on-demand and that is scalable.
+Azure functions do not need any infrastructure and have 0 maintenance.
+Azure functions use industry standard.
+Supports different programming languages.
+Cost-effecting pricing
+
+
+Logic Apps :-
+Build integrated solutions that connect apps and services together
+Built in connectors
+
+Benefits of Logic Apps
+200+ Built-in connectors
+Serverless architecture
+Drag and drop developer experience
+Monitoring and Logging
+Auto Scaling and High Availability
+
+
+Redis Cache - Azure cache - In-memory key/value pairs
+
+Provides in-memory data
+Flexibility & performance
+Fully Managed
+Security & Availability
+
+
+
+
+
+
+
+
 
