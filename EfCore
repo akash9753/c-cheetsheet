@@ -28,13 +28,15 @@ Relation in efcore
 
 
 
+First - always expect atleat one element else return exception
+FirstOrDefault - if no records are found it return null. if found multiple element return first one
 
+Find - only filter directly for key
 
+Single - single expects only one element. if found multiple element return throws an exception
+SingleOrDefault - it will return null if no records are found, Throws Exception if more than one element matches.
 
-
-
-
-
+Pagination - Skip(0), Take(2);
 
 
 
