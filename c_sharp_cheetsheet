@@ -85,11 +85,12 @@ its thread from thread pool
 
 -------------------------------------------------------------------
 char[] chars = s.ToCharArray();
+
 string reversed = new string(chars);
 Console.WriteLine(chars.GetType());
 int[] inputArr = { 9,2,3,4,5,6,7 };
 public static int[] secondLargest(int [] inputArr)
-
+ for(int i = 0, j = chars.Length - 1; i < j; i++,j--)
 ------------------------------------------------------------------
 Dictionary<int, int> Count = new Dictionary<int,int>();
 foreach (KeyValuePair<int,int> k in Count)
