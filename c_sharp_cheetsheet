@@ -86,6 +86,7 @@ its thread from thread pool
 -------------------------------------------------------------------
 char[] chars = s.ToCharArray();
 (int i = 0, j = chars.Length - 1; i < j; i++,j--)
+Array.Sort(chars); 
 string reversed = new string(chars);
 Console.WriteLine(chars.GetType());
 int[] inputArr = { 9,2,3,4,5,6,7 };
