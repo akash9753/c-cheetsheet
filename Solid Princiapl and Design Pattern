@@ -1,0 +1,30 @@
+Design pattern
+1. Creational - Factory, Singlton - deal with object creation mechanism. optimize the technique of object creation
+2. Structrul - adapter - to manage the structure of classes and interfaces and relation between classes
+3. Behavioral - observer -  defines the way to communicate between classes and object.
+
+Singlton - ensures a class has only one instance of it.
+
+Simple Factory - one factory class is responsible for creating all the objects for its derived class. (matching string)
+
+Factory method pattern - uses inheritance and polymorphism, so it provide more flexibility and extensibility. 
+
+Factory pattern provides an interface or abstract class for creating objects, but lets the subclasses decides which class to instantiate
+
+1. create interface
+2. create 2 classes java, .net which implement interface
+3. create one abstract class, inside create one abstract method, its return type should be interface
+4. create 2 concrete class which inherit abstract class and override abstract class method, concrete class should return java and .net object
+5. now in main method create object of concrete classes and in main if we call override method so return type of instance is interface
+
+Solid Prinipal
+
+SRP - Single Responsibility principal - class should have one responsibility, one reason to change
+OCP- Open Close Principal - entities should be open for extension, but closed for modification
+LSP - Liskov Substitution principal - object of a child class must able to replace an object of the parent class without breaking the application
+ISP - interface Segration Principal - class should not be forced to implement interfaces that it does not use
+DIP - Dependency Inversion Principal - high level class must not depend upon a lower level class.
+
+A broader concept
+IOC - Inversion of Control - control of object creation and dependency resolution from an external system (like a framework or container)
+Dependency Injection (DI) is one of the ways to implement Inversion of Control (IoC)
