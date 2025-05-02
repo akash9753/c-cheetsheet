@@ -24,6 +24,8 @@ OCP- Open Close Principal - entities should be open for extension, but closed fo
 LSP - Liskov Substitution principal - object of a child class must able to replace an object of the parent class without breaking the application
 ISP - interface Segration Principal - class should not be forced to implement interfaces that it does not use
 DIP - Dependency Inversion Principal - high level class must not depend upon a lower level class.
+CQRS - Command Query Responsibility Segregation - Architectural pattern to separate read and write operations for better scalability and 
+maintainability.
 
 A broader concept
 IOC - Inversion of Control - control of object creation and dependency resolution from an external system (like a framework or container)
