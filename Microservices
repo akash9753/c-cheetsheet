@@ -1,1 +1,10 @@
+ Top message broker services 
 
+1. Apache Kafka – High-throughput, distributed event streaming platform.
+2. RabbitMQ – Lightweight, flexible, and supports multiple messaging protocols.
+3. Amazon SQS (Simple Queue Service) – Fully managed message queuing service from AWS.
+4. Azure Service Bus – Microsoft’s enterprise message broker with rich features.
+5. Google Pub/Sub – Scalable, real-time messaging from Google Cloud.
+
+
+OCELOT - opensource - api gateway 
