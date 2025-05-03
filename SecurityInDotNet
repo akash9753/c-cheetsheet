@@ -1,1 +1,37 @@
+1. XSS Attack - Cross site scripting - 
+Solution - 1. validate & Sanitise user input
+           2. Content security policies CSP - helemt css
+           3. httponly 
+-------------------------------------------------------
+2. CSRF Attack - cross site forgery attack
+Solution - 1. use same site strict/lex
+           2. CORS Policy 
+           3. CSRF Tokens - html5 form
+------------------------------------------------------
+3. SQL Injection - 
+Solution - 1. parameterised quries
+---------------------------------------------------
+4. Password hash - 
+Solution 1. use modern, slow hash function
+         2. Unique salt per password
+         3. Secure salt storage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
