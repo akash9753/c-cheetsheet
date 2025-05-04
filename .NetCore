@@ -1,6 +1,6 @@
 Concurrency vs parllelsim
 
-Concurrency - excecuting multiple task in same core - context switch - time slicing
+Concurrency - excecuting multiple task on the same core using overlapping or timeslicing or context switch.
 
 1. async / await – For non-blocking I/O operations.
 2. Task / Task<T> – Run operations asynchronously.
