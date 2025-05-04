@@ -8,3 +8,36 @@
 
 
 OCELOT - opensource - api gateway 
+
+Communication between 2 microservices 
+1. Synchronous Communication
+   a. HTTP/REST API
+         i.HttpClientFactory
+         ii. HttpClient
+         iii. Refit
+   b.gRPC - Google Remote Procedure Call
+
+2.Asynchronous Communication - Services communicate without waiting for a response.
+   a. Message Queue (Publish/Subscribe)
+       i. Apache Kafka
+       ii. RabbitMQ
+       iii.Amazon SQS
+       iv. Azure Service Bus
+       v. Google Pub/Sub
+   b.Event Bus
+   c.Azure Event Grid/ AWS EventBridge
+
+3.Shared Database(Not Recommended)
+
+
+
+
+
+
+
+
+
+
+
+
+
