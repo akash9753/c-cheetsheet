@@ -37,6 +37,60 @@ Single - single expects only one element. if found multiple element return throw
 SingleOrDefault - it will return null if no records are found, Throws Exception if more than one element matches.
 
 Pagination - Skip(0), Take(2);
+------------------------------------------------------------
+Concurrency in EF Core (2 Main Ways) - when multiple users or processes can update the same data at the same time, and data integrity must be preserved.
+
+1. Optimistic Concurrency (default & recommended)
+    a. Use [Timestamp] or .IsConcurrencyToken() on a property.
+    b. EF throws DbUpdateConcurrencyException when a conflict is detected.
+    c.Requires handling conflict manually in code.
+
+    [Timestamp]
+    public byte[] RowVersion { get; set; } 
+
+2. Pessimistic Concurrency (manual)
+   a. Use database-level row locking with raw SQL and WITH (UPDLOCK).
+   b. Requires transactions.
+   var employee = context.Employees
+    .FromSqlRaw("SELECT * FROM Employees WITH (UPDLOCK) WHERE Id = 1")
+    .FirstOrDefault();
+-------------------------------------------------------
+Parallelism in EF Core (1 Safe Way + 1 Unsafe)
+
+1. Safe: Parallel DB Queries in Separate DbContext Instances
+   a. EF Core's DbContext is not thread-safe.
+   b. Use separate instances of DbContext for parallel operations.
+   var task1 = Task.Run(() => UseDbContext1());
+   var task2 = Task.Run(() => UseDbContext2());
+   await Task.WhenAll(task1, task2);
+
+2. Unsafe: Sharing the Same DbContext Across Threads (❌ Not Recommended)
+   a. Leads to data corruption, exceptions, or deadlocks.
+   b. Always avoid multi-threading on the same DbContext.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
