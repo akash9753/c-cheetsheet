@@ -74,6 +74,7 @@ Ways to Achieve Security in .NET Core
    e.g., IdentityServer4 for token service, Microsoft.AspNetCore.Authentication.*
 -------------------------------------
 how to encrpyt senstive data in database table
+
 1. Encrypt Data in Application Before Saving
 Use built-in .NET APIs like Aes, or libraries like Microsoft.AspNetCore.DataProtection.
 
