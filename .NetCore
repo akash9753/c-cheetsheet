@@ -40,12 +40,31 @@ Why We Use Dependency Injection in .NET
 8. Lifecycle Management - DI containers handle the lifecycle (Singleton, Scoped, Transient) of services.
 
 ----------------------------------------------------------------------
+Does Asynchronous code use Threads at the background? - NO
 
+Asynchorous
+about - 1. Making Application usbale.
+        2. Non-blocking main thread.
 
+Not about 1. Improving performance
+          2. creating new thread
+----------------------------------------------------------------
+TPL autometically uses multiple core
+Threading uses timeslicing and context switching
+Async - concurrent - usable
 
+Asynchronous code enables concurrency, especially for I/O-bound work.
+Concurrency can be achieved using async, tasks, or threads.
 
+Async is about how tasks are executed (non-blocking),
+Concurrency is about how many tasks are in progress at the same time.
 
-
+1. Parallel and time slicing / context switch are 2 diff thing
+2. TPL it implements automatic parallel.
+3. Threading CPU affinity.
+4. Parallel and Async are different.
+5. Synchronization context :- thread which connected the call back and the main thread.
+-----------------------------------------------------------------------------------
 
 
 
