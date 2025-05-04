@@ -1,6 +1,7 @@
 Concurrency vs parllelsim
 
 Concurrency - excecuting multiple task on the same core using overlapping or timeslicing or context switch.
+              Goal - making program usable.
 
 1. async / await – For non-blocking I/O operations.
 2. Task / Task<T> – Run operations asynchronously.
@@ -9,7 +10,9 @@ Concurrency - excecuting multiple task on the same core using overlapping or tim
 5. System.Threading.Channels – For building producer-consumer pipelines.
 6. Thread-safe Collections – Use ConcurrentDictionary, BlockingCollection, etc.
 
-Parallelism - excecuting multiple task in multiple core
+Parallelism - excecuting multiple task in different core
+              Goal - prformance
+
 1.Parallel.For – Loop with parallel execution.
 2.Parallel.ForEach – Process collections in parallel.
 3.Parallel.Invoke – Run multiple actions in parallel.
