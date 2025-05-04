@@ -15,3 +15,72 @@ Parallelism - excecuting multiple task in multiple core
 3.Parallel.Invoke – Run multiple actions in parallel.
 4.Task.Run + Task.WhenAll – Run multiple tasks in parallel.
 5.Thread Class – Manually create threads (low-level, less common now).
+-----------------------------------------------------------------------
+DI - Dependency Injection
+Problems If We Don’t Use
+
+1. Tight Coupling - Classes are directly responsible for creating their own dependencies, making them hard to replace or modify.
+2. Difficult Testing - You can’t easily inject mocks or fakes, making unit testing complex.
+3. Harder Maintenance - Any change in dependency logic may require changing all the classes that use it.
+4. Code Duplication - Manually creating instances of services in multiple places.
+5. Violation of SOLID Principles - Especially Dependency Inversion and Single Responsibility.
+6. Complex Object Graphs - Managing complex dependencies manually can become error-prone and hard to track.
+
+Why We Use Dependency Injection in .NET
+
+1. Loose Coupling - DI decouples classes from their dependencies. You depend on interfaces, not concrete implementations.
+2. Improved Testability - Makes unit testing easier by injecting mock/fake dependencies. No need to hardcode dependencies inside the class.
+3. Better Maintainability - Changes to dependencies require fewer changes in dependent classes.
+5. Code Reusability - You can reuse and switch out implementations easily. 
+6. Centralized Configuration - Dependencies are registered in one place.  (e.g., Startup.cs), improving visibility.
+7. Follows SOLID Principles - Especially the Dependency Inversion Principle (D).
+8. Lifecycle Management - DI containers handle the lifecycle (Singleton, Scoped, Transient) of services.
+
+----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
