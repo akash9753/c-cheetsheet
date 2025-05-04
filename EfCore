@@ -68,6 +68,116 @@ Parallelism in EF Core (1 Safe Way + 1 Unsafe)
    a. Leads to data corruption, exceptions, or deadlocks.
    b. Always avoid multi-threading on the same DbContext.
 ------------------------------------------------------------------
+DbContext - provides bridge a bridge between code and the database. it manages entity ststes and tracks changes automatically.
+
+use data annotaion or fluent api to define relationship like one-to-many, many-to-many, and one to one
+
+migration manges schema changes over time, providing a way to update the databse schema in controlled way
+
+1. Eager loading - fetches related data with main the query
+
+var students = context.Students
+                      .Include(s => s.Courses)
+                      .ToList();
+
+2. lazy loading - fetches data when accessed
+var student = context.Students.First(); // Only loads Student
+var courses = student.Courses.ToList(); // Loads Courses when accessed
+
+3. expilicit loading - requires manually loading
+var student = context.Students.First(); // Only Student loaded
+
+// Explicitly load related data
+context.Entry(student)
+       .Collection(s => s.Courses)
+       .Load();
+---------------------------------------------------------
+run raw SQL queries
+customers = context.Customers
+    .FromSqlRaw("SELECT * FROM Customers WHERE City = {0}", "New York")
+    .ToList();
+-------------------------------------------------------
+Tracking is useful for updates, but for readonly operations, disabling tracking reduces overhead and inproves performance.
+AsNoTracking()
+-------------------------------------------------------
+Concurrency tokens help prevent data loss in scenario with multiple users updating the same data.
+[ConcurrencyCheck]
+public string Email { get; set; }
+------------------------------------------------------
+use multiple DbContext for modularity, seprating read and write operations. - in a large muduler application
+-------------------------------------------------
+Soft Delete - Add an IsDeleted flag and use a global query filter to exclude soft-deleted entires.
+-------------------------------------------------
+optimize EFcore quries for performance in high-traffic application?
+1. Use AsNoTracking() for readonly data
+2. filter as early as possible 
+3. avoid N+1 queries by eager loading where necessary
+------------------------------------------------
+transanction
+Use TransactionScope for distributed transactions or IDbContextTransaction for local transactions.
+using (var transaction = context.Database.BeginTransaction())
+{
+    // Perform actions here
+    transaction.Commit();
+}
+----------------------------------------------------
+tracking states in efcore
+1. Added
+2. Modified
+3. Deleted
+4. Unchanged
+-----------------------------------------------------
+audit log for all CRUD operations in EF Core
+USe SaveChanges interceptors, or overriding SaveChanges in DbContext.
+public override int SaveChanges()
+{
+    // Log changes here
+    return base.SaveChanges();
+}
+---------------------------------------------------
+Question:
+In what scenarios would you use raw SQL queries in EF Core, and what are the potential trade-offs?
+
+Expected Answer:
+Use for complex queries; potential trade-offs include SQL injection risk if not parameterized.
+
+Explanation:
+Raw SQL allows flexibility in EF Core but can bypass EF Core’s optimizations and safety mechanisms.
+----------------------------------------------
+Question:
+How do you handle large datasets in EF Core without causing performance bottlenecks?
+Expected Answer:
+Implement pagination with .Skip() and .Take(), batch queries, and avoid fetching unnecessary columns.
+Code Example:
+var pagedResults = context.Products.Skip(50).Take(10).ToList();
+------------------------------------------------
+Question:
+How would you implement connection resiliency and retry policies in EF Core?
+Expected Answer:
+Enable retry policies with SQL Server’s EnableRetryOnFailure() to automatically handle transient errors.
+Code Example:
+optionsBuilder.UseSqlServer(connectionString, options =>
+    options.EnableRetryOnFailure());
+------------------------------------------------
+Sensitive data logging in EF Core is useful for debugging complex issues by providing parameter values and other details. However, this should not be enabled in 
+production due to the risk of exposing sensitive information in logs.
+Code Example:
+var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
+optionsBuilder.UseSqlServer(connectionString)
+              .EnableSensitiveDataLogging();
+------------------------------------------------
+Explanation:
+EnableDetailedErrors() helps in diagnosing EF Core issues with detailed error messages but doesn't expose sensitive data, making it more suitable for production with 
+minimal risk. EnableSensitiveDataLogging() should be enabled cautiously due to potential privacy risks.
+Code Example:
+optionsBuilder.EnableSensitiveDataLogging();  // For detailed parameter logging
+optionsBuilder.EnableDetailedErrors();        // For enhanced error messages
+--------------------------------------------
+
+
+
+
+
 
 
 
