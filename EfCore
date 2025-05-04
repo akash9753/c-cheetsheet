@@ -67,6 +67,7 @@ Parallelism in EF Core (1 Safe Way + 1 Unsafe)
 2. Unsafe: Sharing the Same DbContext Across Threads (❌ Not Recommended)
    a. Leads to data corruption, exceptions, or deadlocks.
    b. Always avoid multi-threading on the same DbContext.
+------------------------------------------------------------------
 
 
 
