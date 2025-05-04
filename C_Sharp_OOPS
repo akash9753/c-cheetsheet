@@ -16,7 +16,7 @@ Feature	            Abstract Class	                           Private Class	    
 Instantiation	     ❌ Cannot instantiate directly	        ✅ Only inside outer class	             ❌ Cannot instantiate	             ✅ Can be instantiated
 Inheritance	       ✅ Can be inherited	                  ✅ Only within outer class	             ❌ Cannot be inherited	             ❌ Cannot be inherited
 
-Use Case			 – prevent further inheritance
+Use Case		
 Abstract Class -  Base class for shared/abstract logic
 Private Class	 -  Helper class hidden inside another class
 Static Class	  -  Utility or helper functions, constants	
