@@ -1,8 +1,12 @@
-Private class
- 1. A private class in C# can only be declared inside another class (nested class).
- 2. Helps in achieving encapsulation and better code organization.
- 3. Useful for hiding helper or internal logic that should not be exposed.
- 4. a private nested class can be inherited, but only within its containing class
+Feature	            Abstract Class	                           Private Class	                      Static Class	                            Sealed Class
+Instantiation	     ❌ Cannot instantiate directly	        ✅ Only inside outer class	             ❌ Cannot instantiate	             ✅ Can be instantiated
+Inheritance	       ✅ Can be inherited	                  ✅ Only within outer class	             ❌ Cannot be inherited	             ❌ Cannot be inherited
+
+Use Case		
+Abstract Class -  Base class for shared/abstract logic
+Private Class	 -  Helper class hidden inside another class, Helps in achieving encapsulation 
+Static Class	  -  Utility or helper functions, constants	
+Sealed Class   - Final class – prevent further inheritance
 
 Priavte constructor
 1. A private constructor restricts the creation of objects from outside the class.
@@ -11,16 +15,13 @@ Priavte constructor
 4. Can still create instances within the same class.
 5. If a class only has a private constructor, it cannot be inherited or instantiated externally.
 
+static constructor
+1. A static constructor is used to initialize static members of a class.
+2. It does not take any parameters.
+3. It is called automatically by the runtime, only once, before the first use of the class.
+4. It cannot be called explicitly in code.
+5. If a class has only static members, a static constructor is ideal for one-time setup (e.g., config loading).
 
-Feature	            Abstract Class	                           Private Class	                      Static Class	                            Sealed Class
-Instantiation	     ❌ Cannot instantiate directly	        ✅ Only inside outer class	             ❌ Cannot instantiate	             ✅ Can be instantiated
-Inheritance	       ✅ Can be inherited	                  ✅ Only within outer class	             ❌ Cannot be inherited	             ❌ Cannot be inherited
-
-Use Case		
-Abstract Class -  Base class for shared/abstract logic
-Private Class	 -  Helper class hidden inside another class
-Static Class	  -  Utility or helper functions, constants	
-Sealed Class   - Final class – prevent further inheritance
 
 
 
