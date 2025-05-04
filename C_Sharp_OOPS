@@ -1,6 +1,7 @@
 Feature	            Abstract Class	                           Private Class	                      Static Class	                            Sealed Class
 Instantiation	     ❌ Cannot instantiate directly	        ✅ Only inside outer class	             ❌ Cannot instantiate	             ✅ Can be instantiated
 Inheritance	       ✅ Can be inherited	                  ✅ Only within outer class	             ❌ Cannot be inherited	             ❌ Cannot be inherited
+Methods Support                                                                                    ❌ Only static methods allowed
 
 Use Case		
 Abstract Class -  Base class for shared/abstract logic
