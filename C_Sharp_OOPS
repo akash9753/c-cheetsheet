@@ -1,1 +1,12 @@
+Private class
+ 1. A private class in C# can only be declared inside another class (nested class).
+ 2. Helps in achieving encapsulation and better code organization.
+ 3. Useful for hiding helper or internal logic that should not be exposed.
+ 4. a private nested class can be inherited, but only within its containing class
 
+Priavte constructor
+1. A private constructor restricts the creation of objects from outside the class.
+2. Used in Singleton pattern to ensure only one instance is created.
+3. Commonly used in static classes to prevent instantiation.
+4. Can still create instances within the same class.
+5. If a class only has a private constructor, it cannot be inherited or instantiated externally.
