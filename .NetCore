@@ -1,0 +1,17 @@
+Concurrency vs parllelsim
+
+Concurrency - excecuting multiple task in same core - context switch - time slicing
+
+1. async / await – For non-blocking I/O operations.
+2. Task / Task<T> – Run operations asynchronously.
+3. Task.WhenAll() – Run multiple tasks concurrently.
+4. IHostedService / BackgroundService – For background concurrent execution.
+5. System.Threading.Channels – For building producer-consumer pipelines.
+6. Thread-safe Collections – Use ConcurrentDictionary, BlockingCollection, etc.
+
+Parallelism - excecuting multiple task in multiple core
+1.Parallel.For – Loop with parallel execution.
+2.Parallel.ForEach – Process collections in parallel.
+3.Parallel.Invoke – Run multiple actions in parallel.
+4.Task.Run + Task.WhenAll – Run multiple tasks in parallel.
+5.Thread Class – Manually create threads (low-level, less common now).
