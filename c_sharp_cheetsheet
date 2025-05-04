@@ -105,3 +105,21 @@ code remember step
 
 Second Largest
 else if (arr[i] > slargest && arr[i] < largest)
+-------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
