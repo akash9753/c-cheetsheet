@@ -16,9 +16,74 @@ Solution 1. use modern, slow hash function
          2. Unique salt per password
          3. Secure salt storage
 
+---------------------------------------------------
+Ways to Achieve Security in .NET Core
+1. Authentication
+    a. JWT (JSON Web Tokens)
+    b. Cookies
+    c. OAuth2 / OpenID Connect (e.g., with IdentityServer, Azure AD)
+    d. ASP.NET Core Identity
 
+2. Authorization
+   a. Role-based ([Authorize(Roles = "Admin")])
+   b. Policy-based (services.AddAuthorization(options => { ... }))
+   c. Claims-based
 
+3. Data Protection
+   a. ASP.NET Core Data Protection APIs (for encryption of data like tokens/cookies)
 
+4. HTTPS Enforcement
+   a. app.UseHttpsRedirection();
+   b. HSTS headers for enforcing secure connections
+
+5. CORS (Cross-Origin Resource Sharing)
+   a. Configure with services.AddCors() and app.UseCors() to restrict allowed origins.
+
+6. Input Validation & Output Encoding
+   a. Prevent XSS using Razor built-in HTML encoding
+   b. Validate inputs using Data Annotations or Fluent Validation
+
+7. SQL Injection Protection
+   a. Use Entity Framework Core (parameterized queries)
+   b. Avoid raw SQL or always parameterize inputs in FromSqlRaw
+
+8. Authentication Middleware
+   a. app.UseAuthentication(); and app.UseAuthorization();
+
+9. Exception Handling & Logging
+   a. Custom error handling middleware to avoid exposing internal errors
+   b. Use UseExceptionHandler() and proper logging
+
+10. Anti-Forgery (CSRF Protection)
+    a. Enabled by default in Razor Pages and MVC
+    b. Use @Html.AntiForgeryToken() and [ValidateAntiForgeryToken]
+
+11. Rate Limiting / Throttling
+    a. Use libraries like AspNetCoreRateLimit to prevent abuse
+    
+12.Secure Headers
+    a .Add middleware to set headers like Content-Security-Policy, X-Frame-Options, etc.
+
+13. Environment-based Secrets
+    a. Store secrets in environment variables or Azure Key Vault, not in source code
+
+14. File Upload Security
+    a. Validate file type, size, and store safely (e.g., avoid direct access)
+
+15. Use of Security Libraries
+   e.g., IdentityServer4 for token service, Microsoft.AspNetCore.Authentication.*
+-------------------------------------
+how to encrpyt senstive data in database table
+1. Encrypt Data in Application Before Saving
+Use built-in .NET APIs like Aes, or libraries like Microsoft.AspNetCore.DataProtection.
+
+2. Use EF Core Value Converters (Cleaner Approach)
+Encrypt/decrypt automatically using EF Core's value converters.
+
+3. Transparent Data Encryption (TDE) – DB-level
+   a. Provided by SQL Server, Azure SQL, Oracle, etc.
+   b. Handled by the database, no code changes needed.
+   c. Use when you want to encrypt entire database files at rest.
 
 
 
