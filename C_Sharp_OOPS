@@ -104,10 +104,17 @@ Performance             2. Slow in repeated modifications (new object every time
 Memory Usage            3. Creates new memory on each change                                       3.Uses the same memory block   
 Namespace               4. 	System                                                                 4.System.Text
 ----------------------------
-
-
-
-
+Use of using 
+1. Namespace Import
+   1. using System;
+2. Dispose Resources Automatically (using Statement)
+   1. using (var stream = new FileStream("file.txt", FileMode.Open))
+{
+   
+} 
+3. Alias Directive
+   1. using ProjectA = MyCompany.ProjectA.SubModule;
+ 
 
 
 
