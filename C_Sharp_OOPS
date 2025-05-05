@@ -2,26 +2,106 @@ Feature	            Abstract Class	                           Private Class	    
 Instantiation	     ❌ Cannot instantiate directly	        ✅ Only inside outer class	             ❌ Cannot instantiate	             ✅ Can be instantiated
 Inheritance	       ✅ Can be inherited	                  ✅ Only within outer class	             ❌ Cannot be inherited	             ❌ Cannot be inherited
 Methods Support                                                                                    ❌ Only static methods allowed
-
+--------------------------
 Use Case		
 Abstract Class -  Base class for shared/abstract logic
 Private Class	 -  Helper class hidden inside another class, Helps in achieving encapsulation 
 Static Class	  -  Utility or helper functions, constants	
 Sealed Class   - Final class – prevent further inheritance
-
+-----------------------------
 Priavte constructor
 1. A private constructor restricts the creation of objects from outside the class.
 2. Used in Singleton pattern to ensure only one instance is created.
 3. Commonly used in static classes to prevent instantiation.
 4. Can still create instances within the same class.
 5. If a class only has a private constructor, it cannot be inherited or instantiated externally.
-
+-------------------------
 static constructor
 1. A static constructor is used to initialize static members of a class.
 2. It does not take any parameters.
 3. It is called automatically by the runtime, only once, before the first use of the class.
 4. It cannot be called explicitly in code.
 5. If a class has only static members, a static constructor is ideal for one-time setup (e.g., config loading).
+6. static sonstructor can not have parametrs or access modifres.
+----------------------------
+Copy constructor
+the constructot which creates an object by copying varibales from another object is called copy constructor.
+----------------------------
+Constructor overloading
+Constructor Overloading is a technique to define multiple constructors within a class with different sets of parameters.
+---------------------------
+Abstraction:
+Data is not mandatory — abstraction focuses on what a class or object should do, not how it does it.
+You can define methods only, like in an interface or abstract class, without holding any internal data.
+Using abstract classes, interfaces
+Hides complexity from the user
+---------------------------
+Encapsulation:
+Data is mandatory because encapsulation is all about binding data (variables) and methods into a single unit (class).
+You cannot have encapsulation without having some internal state (fields or properties) to protect.
+Using access modifiers (private, public, etc.)
+Controls access and ensures data integrity
+--------------------------------
+Polymorphism – is the ability of a variable object or function to take on multiple forms
+two types of ploymorphism
+1.Compile Time
+    a. Method Overloading
+       i. same name in the same class and do not use inheritance
+       ii. Number of parameters are different 
+       iii.  Types of parameters are different
+       iv. order of parameter is different 
+2.Run Time 
+    a. Method overriding
+       i. Multiple methods of same name in different class
+       ii. all methods have same signature
+       iii. virtual and override keywords
+       iv. Overriding is used to modify and provide a new implementation of the method inherited from a base class.
+       v. Overriding virtual method is optional.
+--------------------------------
+Method overhiding -  
+In Method Hiding, you can completely hide the implementation of the methods of a base class from the derived class using the new keyword.
+The base method is still accessible via base class reference
+-----------------------------
+                        Abstract class                                                                            Interface
+1. Contains both declaration and definition of methods                                               Mostly contains declaration only (C# 8.0+ allows definition too)
+2. Keyword used: abstract                                                                            Keyword used: interface                                                            
+3. Does not support multiple inheritance                                                             Supports multiple inheritance
+4. Can have constructors                                                                             Cannot have constructors
+
+Benefits of interfaces
+1. Help in defining the contract of the system
+2. Unit testing is easy in application having interfaces
+3. Used for implementing dependency injection.
+
+Yes From C# 8.0 it is possible to put method bodies in interfaces
+
+No. Abstract class and interface purpose is to act as base class via inheritance. There object creation is not possible.
+-----------------------------
+Access Specifires
+1. Public
+2. Private
+3. Internal
+4. Protected
+5. ProtectedInternal
+--------------------------
+basic string operation in C#
+1.Concate
+2.Trim
+3.Replace
+4.Contains
+-----------------------------
+                                       string                                                                  string builder
+Type                    1. Immutable (value cannot be changed)                                     1.Mutable (value can be modified)
+Performance             2. Slow in repeated modifications (new object every time)                  2.Fast for repeated changes (modifies in place)
+Memory Usage            3. Creates new memory on each change                                       3.Uses the same memory block   
+Namespace               4. 	System                                                                 4.System.Text
+----------------------------
+
+
+
+
+
+
 
 
 
