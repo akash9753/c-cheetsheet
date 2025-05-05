@@ -76,6 +76,12 @@ Benefits of interfaces
 Yes From C# 8.0 it is possible to put method bodies in interfaces
 
 No. Abstract class and interface purpose is to act as base class via inheritance. There object creation is not possible.
+
+Abstract class is one of the ways to implement abstraction.
+
+abstract class can not be sealed or static.
+
+abstract class does not support multiple inheritance.
 -----------------------------
 Access Specifires
 1. Public
@@ -83,6 +89,8 @@ Access Specifires
 3. Internal
 4. Protected
 5. ProtectedInternal
+
+NO. Abstract methods are only declaration, and they must be implemented in the derive class, therefore they can not be private.
 --------------------------
 basic string operation in C#
 1.Concate
