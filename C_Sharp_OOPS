@@ -115,6 +115,47 @@ Use of using
 3. Alias Directive
    1. using ProjectA = MyCompany.ProjectA.SubModule;
  ---------------------------------
+Deferred Execution - Deferred execution means that the evaluation of an expression is delayed until its value is actually needed.
+------------------------------------
+Yeild
+1. Deferred Execution: Values are returned one at a time when requested, not all at once.
+2. Used with Iterators: Works with IEnumerable and IEnumerable<T> for custom iteration.
+3. yield return: Returns the current value and pauses execution.
+4. yield break: Stops the iteration completely.
+5. State Preservation: Remembers its position between iterations.
+6. Efficient Memory Usage: No need to store all items in memory.
+7. Cannot be used in Async Methods: Only works with synchronous iteration.
+8. Real-Time Calculation: Elements are generated as you loop through them.
+9. Prevents Temporary Lists: No need to create temporary lists or arrays.
+---------------------------------------
+Enum - An Enum is a special "class" that represent a group of constants.
+1. Enum is a value type.
+2. Default value starts from 0.
+3. Values can be custom defined.
+4. Can be cast to integers and vice versa
+-------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
