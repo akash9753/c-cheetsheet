@@ -65,19 +65,47 @@ Concurrency is about how many tasks are in progress at the same time.
 4. Parallel and Async are different.
 5. Synchronization context :- thread which connected the call back and the main thread.
 -----------------------------------------------------------------------------------
+Routing - defined in startup.cs or program.cs
+1. Conventional Routing
 
+app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+});
 
+2. Attribute Routing
+[Route("api/products")]
 
+3. Endpoint Routing (Introduced in ASP.NET Core 3.0)
+4.  Area Routing
+-------------------------------------------------------
+In-Process Hosting:
+1. Runs inside IIS (w3wp.exe).
+2. Faster and lower latency since no inter-process communication.
+3. Windows only, not cross-platform.
 
+Out-of-Process Hosting:
+1. Runs outside IIS in its own process (dotnet.exe).
+2. Cross-platform (Windows, Linux, macOS) but slightly slower due to communication with IIS.
+3. IIS acts as a reverse proxy to forward requests to Kestrel.
+-----------------------------------------------------------
+What app.Run() Actually Does:
+1. app.Run() is a terminal middleware in the ASP.NET Core middleware pipeline.
+2. Its job is to handle the final processing of an HTTP request.
+3. It sends a response and ends the pipeline—no other middleware executes after it.
 
+ app.Use()
+1. Adds middleware to the request pipeline.
+2. Can modify the request or response and call the next middleware using next().
+3. Executes before and after the next middleware.
 
-
-
-
-
-
-
-
+app.Map()
+1. Divides the pipeline based on a URL path segment.
+2. Creates a branch in the middleware pipeline for specific routes.
+-------------------------------------------------------------------
 
 
 
