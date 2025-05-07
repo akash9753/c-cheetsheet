@@ -104,10 +104,10 @@ Performance             2. Slow in repeated modifications (new object every time
 Memory Usage            3. Creates new memory on each change                                       3.Uses the same memory block   
 Namespace               4. 	System                                                                 4.System.Text
 ----------------------------
-Use of using 
+Use of using - 
 1. Namespace Import
    1. using System;
-2. Dispose Resources Automatically (using Statement)
+2. Dispose Resources Automatically (using Statement) - the using statement ensures that DISPOSE() method of the class is called even if an exception occures.
    1. using (var stream = new FileStream("file.txt", FileMode.Open))
 {
    
@@ -134,6 +134,56 @@ Enum - An Enum is a special "class" that represent a group of constants.
 3. Values can be custom defined.
 4. Can be cast to integers and vice versa
 -------------------------------------------
+var - the type of the variable is decided by the compiler at compile time.
+Dynamic - the type of varibale is decided atr run time.
+---------------------------------------------
+Feature	                                 readonly	                                const
+Initialization	                    At declaration or in constructor	        Only at declaration
+Mutability	                          Immutable after initialization	         Always immutable
+Runtime vs Compile-time	                  Runtime	                                Compile-time
+Scope	                               Instance-level or static	                     Always static
+--------------------------------------------
+is - operator used to check the type of object
+as - operator used to perform conversion between compatible refrence type.
+--------------------------------------------
+Extension Methods - 
+1. Extension method allows you to add new methods in the existing class without modifying the source code of the original class.
+2. Extension method must be static because this will be directly called from the class name, not by the object creation.
+3. this keyword is used for binding this method with the main class.
+4. Use them when you want to add a method in a class whose code you don’t have.
+--------------------------------------------------
+Named parameters are used to specify an argument based on the name of the argument and not the position.
+--------------------------------------------------
+Optional parameters allow some arguments which are not mandatory to pass, and their default value is set.
+-----------------------------------------------------
+1. Params keyword is used as a parameter which can take the VARIABLE number of parameters.
+2. It is useful when programmer doesn’t have any prior knowledge about the number of parameters to be used.
+-----------------------------------------------------
+out vs ref - using these 2 we can return more than one value from a method
+out - to return a new and frsh value. No need to initialize out parameter before passing it
+ref - modify an existing value. must initilize ref parameter else error. for ref parameter initialization is not necessary before returning
+-------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
