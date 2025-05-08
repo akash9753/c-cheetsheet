@@ -106,7 +106,17 @@ app.Map()
 1. Divides the pipeline based on a URL path segment.
 2. Creates a branch in the middleware pipeline for specific routes.
 -------------------------------------------------------------------
-
+Request Delegate
+Request delegate are used to build the request pipeline.
+Request delegate are configured using Run,Map and Use extension methods
+---------------------------------------------------------------------
+Middleware - A middleware a compoenent that is executed on every request in the ASP.Net core application.
+Middleware is a software component that is executed during the request-response pipeline in an ASP.NET Core application. It is responsible for handling HTTP requests, modifying them, processing logic, 
+and passing control to the next middleware in the sequence, or directly generating a response.
+In simpler terms, middleware:
+Intercepts HTTP requests as they travel through the pipeline.
+Can modify the request, execute logic, or generate a response.
+Passes the request to the next middleware in the pipeline if it does not end the request.
 
 
 
